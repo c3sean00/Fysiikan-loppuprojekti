@@ -10,9 +10,11 @@ from geopy.distance import geodesic
 
 st.title('Kävelyanalyysi GPS- ja kiihtyvyysdatasta')
 
-# --- 1. Lue data ---
-df_gps = pd.read_csv("mittaukset/Location.csv")
-df_acc = pd.read_csv("mittaukset/Linear Acceleration.csv")
+# --- 1. Lue data GitHub raw -linkeistä ---
+ACC_URL = "https://raw.githubusercontent.com/c3sean00/Fysiikan-loppuprojekti/main/Data/Accelerometer.csv"
+GPS_URL = "https://raw.githubusercontent.com/c3sean00/Fysiikan-loppuprojekti/main/Data/Location.csv"
+df_acc = pd.read_csv(ACC_URL)
+df_gps = pd.read_csv(GPS_URL)
 
 # --- 2. GPS-analyysi ---
 coords = list(zip(df_gps['Latitude (°)'], df_gps['Longitude (°)']))
